@@ -1,0 +1,8 @@
+{
+  "lidar_ip": "192.168.1.150",
+  "host_ip": "192.168.1.5",
+  "delay": 5,
+  "accum": 10,
+  "output_dir": "/Volumes/Kana_White/Project/refmap_capture/captures",
+  "prefix": "static_scan"
+}

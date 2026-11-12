@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Livox Mid-360 Capture</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="viewer-pane">
+    <canvas id="three-canvas"></canvas>
+    <div id="viewer-badge">LIVE</div>
+  </div>
+
+  <div id="side-pane">
+    <div id="control-panel">
+      <h2>Capture</h2>
+      <label>Lidar IP<input id="f-lidar-ip" type="text"></label>
+      <label>Host IP<input id="f-host-ip" type="text"></label>
+      <div class="row">
+        <label>Delay (s)<input id="f-delay" type="number" step="0.5" min="0"></label>
+        <label>Accum (s)<input id="f-accum" type="number" step="0.5" min="0.5"></label>
+      </div>
+      <label>Output folder
+        <div class="input-with-btn">
+          <input id="f-output-dir" type="text" readonly>
+          <button id="btn-browse" type="button">Browse…</button>
+        </div>
+      </label>
+      <label>Prefix<input id="f-prefix" type="text"></label>
+      <button id="btn-start">Start Capture</button>
+      <div id="status-line">idle</div>
+      <div id="status-bar"><div id="status-bar-fill"></div></div>
+    </div>
+
+    <div id="gallery-panel">
+      <div id="gallery-header">
+        <h2>Captures</h2>
+        <button id="btn-refresh" title="refresh">&#8635;</button>
+      </div>
+      <div id="gallery-grid"></div>
+    </div>
+  </div>
+</div>
+
+<div id="browse-modal" class="hidden">
+  <div id="browse-box">
+    <h3>Select output folder</h3>
+    <div id="browse-path"></div>
+    <div id="browse-list"></div>
+    <div id="browse-actions">
+      <button id="browse-up">&uarr; Up</button>
+      <div class="spacer"></div>
+      <button id="browse-cancel" class="secondary">Cancel</button>
+      <button id="browse-select">Select this folder</button>
+    </div>
+  </div>
+</div>
+
+<div id="lightbox" class="hidden">
+  <div id="lightbox-box">
+    <button id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="">
+    <div id="lightbox-meta"></div>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
